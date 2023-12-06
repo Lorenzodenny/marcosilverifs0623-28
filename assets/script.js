@@ -19,17 +19,27 @@ fetch(catalogoLibriUrl)
         </div>
       </div>
     </div>`
-    })
+
+
+
     classRow.innerHTML = htmlListContent
     
-
     const bottoneCancella = document.querySelectorAll(".btn-delete")
     bottoneCancella.forEach(bottone => {
         bottone.addEventListener("click", function(){
-            this.closest(".col-3").remove()
+            this.closest(".col-6").remove()
         })
     })
-    
+
+
+    const bottoneCompra = document.querySelectorAll(".btn-compra")
+    bottoneCompra.forEach(bottone => {
+        bottone.addEventListener("click", function(){
+            this.closest(".col-6")
+            sessionStorage.setItem("libroComprato", libro.title)
+        })
+    })
+  })
 })
 
 
